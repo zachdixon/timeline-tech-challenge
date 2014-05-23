@@ -71,7 +71,7 @@ module.exports = function (grunt) {
         livereload: true
       },
       app: {
-        files: [ paths.app, paths.test ],
+        files: [ paths.app, paths.test, 'app/*.html' ],
         tasks: [ 'test' ]
       }
     }
