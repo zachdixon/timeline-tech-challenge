@@ -7,6 +7,7 @@
 
   app.use('/app', express.static(path.resolve('app')));
   app.use('/test', express.static(path.resolve('test')));
+  app.use('/data', express.static(path.resolve('data')));
   app.use('/.grunt', express.static(path.resolve('.grunt')));
 
   app.engine('html', ejs.__express);
