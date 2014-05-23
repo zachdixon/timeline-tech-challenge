@@ -53,19 +53,6 @@ module.exports = function (grunt) {
     },
 
 
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc'
-      },
-      app: {
-        src: [ paths.app ]
-      },
-      test : {
-        src : [ paths.test ]
-      }
-    },
-
-
     watch: {
       options: {
         livereload: true
@@ -79,13 +66,12 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jasmine');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-express');
 
 
   // Development tasks
   grunt.registerTask('default',           [ 'express:dev', 'watch' ]);
-  grunt.registerTask('test',              [ 'jshint:app', 'express:test', 'jasmine' ]);
+  grunt.registerTask('test',              [ 'express:test', 'jasmine' ]);
 
 };
