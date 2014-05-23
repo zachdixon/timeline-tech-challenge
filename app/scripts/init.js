@@ -4,15 +4,14 @@
 
   require.config({
     paths: {
-      underscore : 'app/vendor/underscore',
-      backbone : 'app/vendor/backbone',
-      jquery : 'app/vendor/jquery'
-    },
+      underscore : 'vendor/underscore',
+      backbone : 'vendor/backbone',
+      jquery : 'vendor/jquery'
+    }
+  });
 
-  require([ 'app/scripts/app' ], function(app) {
+  require([ 'app' ], function(app) {
 
   });
 
 }());
-
-

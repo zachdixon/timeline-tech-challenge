@@ -1,0 +1,19 @@
+{
+  "globals": {
+    "define": false,
+    "require": false,
+    "window": false,
+    "document": false,
+    "jasmine": false,
+    "describe": false,
+    "xdescribe": false,
+    "beforeEach": false,
+    "afterEach": false,
+    "runs": false,
+    "waitsFor": false,
+    "it": false,
+    "xit": false,
+    "spyOn": false,
+    "expect": false
+  }
+}

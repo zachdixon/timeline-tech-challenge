@@ -1,0 +1,30 @@
+{
+  "name": "timeline-tech-challenge",
+  "version": "0.0.0",
+  "description": "Articulate tech challenge",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/articulate/timeline-tech-challenge.git"
+  },
+  "author": "Articulate Global, Inc. <admin@articulate.com>",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/articulate/timeline-tech-challenge/issues"
+  },
+  "dependencies": {
+    "express": "~4.3.0",
+    "ejs": "~1.0.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-express": "~1.3.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-template-jasmine-requirejs": "~0.1.10",
+    "grunt-contrib-requirejs": "~0.4.4",
+    "grunt-contrib-jasmine": "~0.5.3"
+  }
+}
