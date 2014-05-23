@@ -4,9 +4,9 @@
 
   require.config({
     paths: {
-      underscore : 'vendor/underscore',
-      backbone : 'vendor/backbone',
-      jquery : 'vendor/jquery'
+      underscore : '../vendor/underscore',
+      backbone : '../vendor/backbone',
+      jquery : '../vendor/jquery'
     }
   });
 
