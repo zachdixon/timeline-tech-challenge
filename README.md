@@ -40,9 +40,9 @@ change the setup or replace it with a framework of your choosing.
 
 Feel free to change any of the tools here, such as replacing
 [grunt][grunt] with [gulp][gulp] if you like, using a simple
-python server instead of [node][node], etc. But if you do
-change anything, please be sure to update your README so we
-can easily run your application.
+python server instead of the bundled [express][express] server,
+etc. But if you do change anything, please be sure to update
+your README so we can easily run your application.
 
 ## App features
 
@@ -72,3 +72,4 @@ choice that you made. Many details will be up to you.
 [node]:       http://nodejs.org
 [grunt]:      http://gruntjs.com
 [gulp]:       http://gulpjs.com
+[express]:    http://expressjs.com/
