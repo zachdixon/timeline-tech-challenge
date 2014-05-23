@@ -10,7 +10,9 @@
     }
   });
 
-  require([ 'app' ], function(app) {
+  require(['underscore', 'backbone', 'jquery'], function() {
+
+    require([ 'app' ], function(app) {});
 
   });
 
