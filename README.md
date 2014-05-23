@@ -32,8 +32,11 @@ change the setup or replace it with a framework of your choosing.
 1. Install [node][node] if you haven't already
 1. Install [grunt][grunt] if you haven't already
 1. Run `npm install` to set everything up
+1. Run `grunt` to start a simple server that will
+   host your app. It will also rerun your tests
+   for you as you change your code.
 1. Build the app
-1. Email us a link to the repo when you're done
+1. Email us a link to your repo when you're done
 
 Feel free to change any of the tools here, such as replacing
 [grunt][grunt] with [gulp][gulp] if you like, using a simple
@@ -48,6 +51,16 @@ If you have any major questions, by all means email us.
 If you have questions about feature specifics, feel free to
 implement what you think makes sense and explain why you made the
 choice that you made. Many details will be up to you.
+
+### A few notes and requirements
+
+- You cannot change the supplied data at all. It may not be
+  formatted the way you want and it may be inconsistent—you'll
+  need to figure out how to deal with that in your app.
+- You cannot use any additional libraries than those provided.
+- Your app only needs to work in the latest Chrome.
+- All of your tests should be passing upon submission.
+- **You must have fun doing this** :dancer: :dancers: :smile:
 
 ![timeline app wireframe](https://cloud.githubusercontent.com/assets/963631/3071771/d5642e04-e2bc-11e3-997a-7d3493eed2ff.png)
 
