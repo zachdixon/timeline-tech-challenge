@@ -3,14 +3,14 @@
     {
       "firstName" : "Chip",
       "lastName" : "Bitly",
-      "birthDate" : 53000000000,
+      "age" : 46,
       "events" : [
         {
           "age": 4,
           "content": "learned to ride a bike"
         },
         {
-          "date": 440091000000,
+          "age": 12,
           "content": "was successfully potty trained"
         },
         {
@@ -18,19 +18,19 @@
           "content": "got his first job"
         },
         {
-          "date": 679151766000,
+          "age": 21,
           "content": "graduated valedictorian"
         },
         {
-          "age": "27",
+          "age": 27,
           "content": "got married to a person"
         },
         {
-          "age": "32",
+          "age": 32,
           "content": "became the father of some people"
         },
         {
-          "date": 1239912800000,
+          "age": 37,
           "content": "got stuck in a well"
         },
         {
