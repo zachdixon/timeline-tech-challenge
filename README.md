@@ -33,6 +33,7 @@ want to see how well you structure your code outside of a framework.
 ## App features
 
 The Timeline should take 2 seconds per year, and change for every event.
+The text of the event should read "At age [age], [firstname] [event]."
 A simple div which changes content will suffice. Also, a button which
 changes with the state of the timeline (play when paused, pause when
 playing, reset when finished) and which responds to clicks. You may style
