@@ -42,10 +42,9 @@ the button if you like, but simple text ("play"/"pause"/"reset") is enough.
 
 - You cannot change the supplied data at all.
 - Your app only needs to work in the latest Chrome.
-- All of your code should be thoroughly tested and all tests should be passing upon submission.
+- All of your code should be thoroughly tested and all tests
+  should be passing upon submission.
 - **You must have fun doing this** :dancer: :dancers: :smile:
-
-![timeline app wireframe](https://cloud.githubusercontent.com/assets/963631/3071771/d5642e04-e2bc-11e3-997a-7d3493eed2ff.png)
 
 [backbone]:   http://backbonejs.org
 [underscore]: http://underscorejs.org
