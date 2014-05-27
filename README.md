@@ -30,15 +30,17 @@ want to see how well you structure your code outside of a framework.
 1. Push to your repo
 1. Email us a link to your repo when you're done
 
-## App features
+## Application Requirements
 
-The Timeline should take 2 seconds per year (so a 50 year-old would have
-a 100 second timeline), and change for every event. The text of the event
-should read "At age [age], [firstname] [event]." A simple div which
-changes content will suffice. Also, a button which changes with the state
-of the timeline (play when paused, pause when playing, reset when finished)
-and which responds to clicks. You may style the button if you like, but
-simple text ("play"/"pause"/"reset") is enough.
+You’ll be building a small application that plays back events from a person's life. The events are described in the [timelines.json](https://github.com/articulate/timeline-tech-challenge/blob/master/timelines.json) file. The application requires a simple UI that will display the text for the event and a play and pause button.  The text of the event should read "At age [age], [firstname] [event]."
+
+The rate at which the events should play back is 2 seconds per year of the person's life, and the event should be displayed at the correct time in that range. For example for a 50 year old man, it would take 100 seconds to play back all the events. If the second event took place at 10 years old, that event should be displayed at 20 seconds.
+
+When you press play, the events should start being displayed and the play button should turn into a pause button. Pressing Pause should act as expected. Once all events have played the button should change to a reset button and the user should be able to restart playback.
+
+You will not be judged on visual design, although making it look nice won’t hurt. Here is a simple wireframe of the application.
+
+![wireframe](https://cloud.githubusercontent.com/assets/637211/3095396/6179e2d2-e5c7-11e3-95a8-05189df377e5.jpg)
 
 ### A few notes and requirements
 
@@ -47,8 +49,6 @@ simple text ("play"/"pause"/"reset") is enough.
 - All of your code should be thoroughly tested and all tests
   should be passing upon submission.
 - **You must have fun doing this** :dancer: :dancers: :smile:
-
-![wireframe](https://cloud.githubusercontent.com/assets/637211/3095396/6179e2d2-e5c7-11e3-95a8-05189df377e5.jpg)
 
 [backbone]:   http://backbonejs.org
 [underscore]: http://underscorejs.org
