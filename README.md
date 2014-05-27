@@ -38,7 +38,9 @@ The rate at which the events should playback is 2 seconds per age of the person 
 
 When you press play, the events should start being displayed and the play button should turn into a pause button. Pressing Pause should act as expected. Once all events have played the user should be able to restart playback.
 
-You will not be judged on visual design, although making it look nice won’t hurt. 
+You will not be judged on visual design, although making it look nice won’t hurt. Here is a simple wireframe of the application.
+
+![wireframe](https://cloud.githubusercontent.com/assets/637211/3095396/6179e2d2-e5c7-11e3-95a8-05189df377e5.jpg)
 
 ### A few notes and requirements
 
@@ -47,8 +49,6 @@ You will not be judged on visual design, although making it look nice won’t hu
 - All of your code should be thoroughly tested and all tests
   should be passing upon submission.
 - **You must have fun doing this** :dancer: :dancers: :smile:
-
-![wireframe](https://cloud.githubusercontent.com/assets/637211/3095396/6179e2d2-e5c7-11e3-95a8-05189df377e5.jpg)
 
 [backbone]:   http://backbonejs.org
 [underscore]: http://underscorejs.org
