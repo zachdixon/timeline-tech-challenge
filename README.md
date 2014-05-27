@@ -32,11 +32,11 @@ want to see how well you structure your code outside of a framework.
 
 ## Application Requirements
 
-You’ll be building a small application that plays back events from a persons life. The events are described in the [timelines.json](https://github.com/articulate/timeline-tech-challenge/blob/master/timelines.json) file. The application requires a simple UI that will display the text for the event and a play and pause button.  The text of the event should read "At age [age], [firstname] [event]."
+You’ll be building a small application that plays back events from a person's life. The events are described in the [timelines.json](https://github.com/articulate/timeline-tech-challenge/blob/master/timelines.json) file. The application requires a simple UI that will display the text for the event and a play and pause button.  The text of the event should read "At age [age], [firstname] [event]."
 
-The rate at which the events should playback is 2 seconds per age of the person and the event should be displayed at the correct time in that range. So, for a 50 year old man, it would take 100 seconds to playback all the events, if the second event took place at 10 years old - that event should be displayed at 20 seconds.
+The rate at which the events should play back is 2 seconds per year of the person's life, and the event should be displayed at the correct time in that range. For example for a 50 year old man, it would take 100 seconds to play back all the events. If the second event took place at 10 years old, that event should be displayed at 20 seconds.
 
-When you press play, the events should start being displayed and the play button should turn into a pause button. Pressing Pause should act as expected. Once all events have played the user should be able to restart playback.
+When you press play, the events should start being displayed and the play button should turn into a pause button. Pressing Pause should act as expected. Once all events have played the button should change to a reset button and the user should be able to restart playback.
 
 You will not be judged on visual design, although making it look nice won’t hurt. Here is a simple wireframe of the application.
 
