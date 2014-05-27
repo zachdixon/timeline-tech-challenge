@@ -48,6 +48,8 @@ simple text ("play"/"pause"/"reset") is enough.
   should be passing upon submission.
 - **You must have fun doing this** :dancer: :dancers: :smile:
 
+![wireframe](https://cloud.githubusercontent.com/assets/637211/3095396/6179e2d2-e5c7-11e3-95a8-05189df377e5.jpg)
+
 [backbone]:   http://backbonejs.org
 [underscore]: http://underscorejs.org
 [jquery]:     http://jquery.com
