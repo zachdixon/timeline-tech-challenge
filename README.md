@@ -38,9 +38,10 @@ The rate at which the events should play back is 2 seconds per year of the perso
 
 When you press play, the events should start being displayed and the play button should turn into a pause button. Pressing Pause should act as expected. Once all events have played the button should change to a reset button and the user should be able to restart playback.
 
-You will not be judged on visual design, although making it look nice won’t hurt. Here is a simple wireframe of the application.
+You will not be judged on visual design, although making it look nice won’t hurt. Here is a simple wireframe of the application. [And here is a short video showing the application in action.] (https://www.dropbox.com/s/tr3xy9l3yrv248b/quickcast-28-05-2014-08-36-34.mp4)
 
 ![wireframe](https://cloud.githubusercontent.com/assets/637211/3095396/6179e2d2-e5c7-11e3-95a8-05189df377e5.jpg)
+
 
 ### A few notes and requirements
 
