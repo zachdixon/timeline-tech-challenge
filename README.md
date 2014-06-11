@@ -16,7 +16,7 @@ back, paused, and reset.
 
 Because we want to see your overall JS skills for this, we're
 limiting the tools you can use to the lightweight [Backbone][backbone],
-[Underscore][underscore], and [jQuery][jquery], plus [RequireJS][requirejs]
+[Underscore][underscore] (or [Lodash][lodash] if you prefer), and [jQuery][jquery], plus [RequireJS][requirejs]
 for loading code. You can use any or all of these, but by all means
 write vanilla JS if you're more comfortable with that than these
 tools. We chose these because they're tools we use and because we
@@ -53,5 +53,6 @@ You will not be judged on visual design, although making it look nice won’t hu
 
 [backbone]:   http://backbonejs.org
 [underscore]: http://underscorejs.org
+[lodash]:     http://lodash.com/
 [jquery]:     http://jquery.com
 [requirejs]:  http://requirejs.org
