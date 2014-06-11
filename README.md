@@ -45,10 +45,10 @@ You will not be judged on visual design, although making it look nice won’t hu
 
 ### A few notes and requirements
 
-- You cannot change the supplied data at all.
+- You cannot change the supplied data at all, and the data must be used as-is as a JSON file.
+- The timer should be as accurate as possible, including pausing. For example, if one second has passed in the "year" and the timeline is paused, the next "year" should come up one second after resuming.
 - Your app only needs to work in the latest Chrome.
-- All of your code should be thoroughly tested and all tests
-  should be passing upon submission.
+- All of your code should be thoroughly tested and all tests should be passing upon submission.
 - **You must have fun doing this** :dancer: :dancers: :smile:
 
 [backbone]:   http://backbonejs.org
