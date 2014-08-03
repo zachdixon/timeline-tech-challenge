@@ -13,11 +13,12 @@ Object.keys(window.__karma__.files).forEach(function(file) {
 });
 require.config({
   // Karma serves files under /base, which is the basePath from your config file
-  baseUrl: '/base/lib',
+  baseUrl: '/base/src/js',
 
   paths: {
-    jquery: 'jquery.js'
-  }
+    jquery: '../../lib/jquery',
+    text: '../../lib/text'
+  },
 
   // dynamically load all test files
   deps: allTestFiles,

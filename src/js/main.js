@@ -7,6 +7,7 @@ require.config({
 
 define(['jquery','timeline','text!timeline.json'],function($, Timeline, json){
   window.timeline = new Timeline({
-    data: $.parseJSON(json)
+    data: $.parseJSON(json),
+    interval: 500
   });
 });

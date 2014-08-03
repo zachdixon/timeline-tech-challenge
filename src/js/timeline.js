@@ -20,42 +20,97 @@ define(['jquery','timer','eventLoader','utils'], function($, Timer, EventLoader,
 
 
   var Timeline = function(opts) {
+
+    if(typeof opts !== "object") {
+      throw new Error("Illegal parameter passed to Timeline");
+    }
+
+    // Instance variables
     var that = this,
-        opts,
-        changeState;
+        opts;
+
     // Enables initialization without the 'new' keyword
     if (Object.getPrototypeOf(that) !== Timeline.prototype) {
       that = Object.create(Timeline.prototype);
       that.constructor.apply(that, arguments);
     }
+
+    // Set defaults and define instance variables
     opts = Utils.setDefault(opts, {});
-    that.wrapper = Utils.setDefault(opts.wrapper, '.timeline');
+    that.wrapper = Utils.setDefault(opts.wrapper, '.timeline-wrapper');
+    that.template = Utils.setDefault(opts.template, Timeline.template);
     that.event_text = Utils.setDefault(opts.eventText, '.event-text');
+    that.animate = Utils.setDefault(opts.animate, true);
     that.control = Utils.setDefault(opts.control, '.btn-control');
     that.control_glyphicon = Utils.setDefault(opts.controlGlyphicon, '.control-glyphicon');
-    that.inverval = Utils.setDefault(opts.interval, 2000);
+    that.interval = Utils.setDefault(opts.interval, 2000);
     that.data = Utils.setDefault(opts.data, {firstName: "Foo", lastName: "Bar", age: 21, events: [{age: 0, content: "was born"}]});
 
-    that.timer = new Timer(that.interval);
-    that.eventLoader = new EventLoader(that.json_path);
+    that.timer = new Timer(that);
+    that.eventLoader = new EventLoader(that);
 
+    that.init();
 
-    // Play/pause/reset event listener
-    changeState = function(e){
-      e.preventDefault();
-      var $btn = $(e.currentTarget),
-          state = $btn.attr('data-state');
-      if(state === undefined || state === 'paused') {
-
-      }
-
-    }
-
-    // Play/pause/reset event listener
-    $(that.control).on('click', changeState.bind(that));
-    return that;
   }
 
+  Timeline.template = '<div class="timeline">' +
+    '<div class="event">' +
+      '<p class="event-text animated zoomIn"></p>' +
+      '<div class="circle_btn_wrapper">' +
+        '<a href="#" class="circle_btn btn-control"></a>' +
+        '<label class="circle_btn_label">' +
+          '<i class="icon-off"></i>' +
+          '<span class="glyphicon glyphicon-play control-glyphicon"></span>' +
+        '</label>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
+
+  Timeline.prototype.render = function() {
+    $(this.wrapper).append($(this.template));
+  }
+
+  Timeline.prototype.attachEventHandlers = function() {
+    // Play/pause/reset event listener
+    $(this.control).on('click', this.timer.changeState.bind(this.timer));
+  }
+
+
+  Timeline.prototype.changeEvent = function() {
+    var event_loader = this.eventLoader,
+        timer = this.timer,
+        $current_event;
+    // Stop timeline if no events left
+    if(event_loader.getNextEvent() == false) {
+      timer.stop();
+      this.button_glyphicon
+    }else {
+      timer.setTimeout(timer.getTimeUntilNextEvent());
+    }
+    $current_event = $(this.event_text);
+    if(this.animate) {
+      $current_event.removeClass('zoomIn').addClass('bounceOutRight');
+      $current_event.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', this.showEvent.bind(this));
+    }else {
+      this.showEvent();
+    }
+  }
+
+  Timeline.prototype.showEvent = function() {
+    var event_loader = this.eventLoader,
+        $event = $(this.event_text)
+        next_event = event_loader.getNextEvent();
+    $event.text(this.eventLoader.getEventText());
+    if(this.animate) {
+      $event.addClass('zoomIn');
+    }
+    event_loader.current_event = next_event;
+  }
+
+  Timeline.prototype.init = function() {
+    this.render();
+    this.attachEventHandlers();
+  }
 
 
 
