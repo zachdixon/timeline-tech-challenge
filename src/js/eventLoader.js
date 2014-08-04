@@ -1,6 +1,5 @@
 define(['utils'], function(Utils) {
-  var EventLoader = function(parent) {
-    var data = parent.data;
+  var EventLoader = function(data) {
     if(data == undefined || typeof data !== "object") {
       throw new Error("Missing JSON data");
     }
@@ -30,8 +29,14 @@ define(['utils'], function(Utils) {
     };
     that.events = data.events
     that.current_event;
-    that.timeline = parent;
+  }
 
+  EventLoader.prototype.next = function() {
+    this.current_event = this.getNextEvent();
+  }
+
+  EventLoader.prototype.reset = function() {
+    this.current_event = undefined;
   }
 
 
@@ -75,5 +80,6 @@ define(['utils'], function(Utils) {
                   current_event.content;
     return event_text;
   }
+
   return EventLoader;
 })
