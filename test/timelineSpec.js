@@ -6,22 +6,27 @@ define(['jquery','timeline','timer','eventLoader','utils','text!timeline.json'],
     });
 
     beforeEach(function(){
-        spyOn(tl, 'init').andCallThrough();
+      spyOn(tl, 'init').andCallThrough();
     });
 
     afterEach(function() {
-        tl.reset();
+      tl.reset();
     });
 
     it("should be able to initialize", function() {
-        expect(tl.init).toBeDefined();
-        tl.init();
-        expect(tl.init).toHaveBeenCalled();
+      expect(tl.init).toBeDefined();
+      tl.init();
+      expect(tl.init).toHaveBeenCalled();
     });
 
     it("should create an event loader during initialization", function(){
-        tl.init();
-        expect(tl.event_loader instanceof EventLoader).toEqual(true);
+      tl.init();
+      expect(tl.eventLoader instanceof EventLoader).toEqual(true);
+    });
+
+    it("should create a timer during initialization", function() {
+      tl.init();
+      expect(tl.timer instanceof Timer).toEqual(true);
     });
     // describe("appending strings", function() {
     //   it("should be able to append 2 strings", function() {

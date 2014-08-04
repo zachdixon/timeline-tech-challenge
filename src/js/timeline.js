@@ -134,11 +134,9 @@ define(['jquery','timer','eventLoader','utils'], function($, Timer, EventLoader,
   // and calls showEvent to show the new event
   // Stops timeline if no more events
   Timeline.prototype.changeEvent = function() {
-    var event_loader = this.eventLoader,
-        timer = this.timer,
-        $current_event;
+    var $current_event;
     // Stop timeline if no events left
-    if(event_loader.getNextEvent() == false) {
+    if(this.eventLoader.getNextEvent() == false) {
       this.state = Timeline.STATES.ENDED;
       this.changeControl('reset');
     }else { // else start timer for next event
@@ -174,9 +172,10 @@ define(['jquery','timer','eventLoader','utils'], function($, Timer, EventLoader,
     var event_loader = this.eventLoader,
         current_event = event_loader.current_event,
         next_event = event_loader.getNextEvent(),
-        time;
-
-    time = next_event.age * this.delay;
+        time = 0;
+    if(next_event !== undefined) {
+      time = next_event.age * this.delay;
+    }
     if(current_event !== undefined) {
       time -= (current_event.age * this.delay);
     }

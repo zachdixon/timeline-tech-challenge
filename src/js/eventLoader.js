@@ -48,17 +48,18 @@ define(['utils'], function(Utils) {
         current_event_index,
         last_event_index = (events.length - 1),
         next_event;
-    if(current_event == undefined) {
+    if(current_event === undefined) {
       this.setCurrentEvent(0);
-      return events[0]; //return first event if it doesn't have a current one
+      next_event = events[0]; //return first event if it doesn't have a current one
     }else {
       current_event_index = events.indexOf(current_event);
     }
     if(current_event_index === last_event_index) {
-      return false; // return false if current event is the last event
+      next_event = false; // return false if current event is the last event
     }else {
-      return events[current_event_index + 1]; // return next event
+      next_event = events[current_event_index + 1]; // return next event
     }
+    return next_event;
   }
 
   // Set the current event and returns the event

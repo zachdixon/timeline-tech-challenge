@@ -29,3 +29,11 @@ require.config({
   // we have to kickoff jasmine, as it is asynchronous
   callback: window.__karma__.start
 });
+
+// Add bind support for PhantomJS
+Function.prototype.bind = Function.prototype.bind || function (thisp) {
+  var fn = this;
+  return function () {
+    return fn.apply(thisp, arguments);
+  };
+};
