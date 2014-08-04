@@ -9,6 +9,7 @@ html, body {
 .event-text {
   font-size: 40px;
   color: #fff;
+  min-height: 57px;
 }
 
 /* Circle button */

@@ -78,7 +78,7 @@ define(['jquery','timer','eventLoader','utils'], function($, Timer, EventLoader,
       case Timeline.STATES.INITIAL:
         timeline.state = Timeline.STATES.PLAYING;
         timeline.changeControl('pause');
-        timer = new Timer(timeline.callback.bind(timeline), timeline.delay, timeline.timeUntilNextEvent());
+        // timer = new Timer(timeline.callback.bind(timeline), timeline.delay, timeline.timeUntilNextEvent());
         timer.resume();
         break;
       case Timeline.STATES.PLAYING:
@@ -92,17 +92,14 @@ define(['jquery','timer','eventLoader','utils'], function($, Timer, EventLoader,
         timer.resume();
         break;
       case Timeline.STATES.ENDED:
-        timeline.state = Timeline.STATES.INITIAL;
-        $(this.event_text).text("");
-        timeline.eventLoader = new EventLoader(this.data);
-        timeline.changeControl('play');
-        timer.reset();
+        timeline.reset();
         break;
       default:
         break;
     }
   }
 
+  // Changes play/pause/reset icon/text based on passed state
   Timeline.prototype.changeControl = function(state) {
     var $control = $(this.control),
         $control_glyphicon = $(this.control_glyphicon);
@@ -132,7 +129,10 @@ define(['jquery','timer','eventLoader','utils'], function($, Timer, EventLoader,
     }
   }
 
-
+  // Changes to next event
+  // Hides to shown event, sets a new timer for the next event,
+  // and calls showEvent to show the new event
+  // Stops timeline if no more events
   Timeline.prototype.changeEvent = function() {
     var event_loader = this.eventLoader,
         timer = this.timer,
@@ -168,6 +168,8 @@ define(['jquery','timer','eventLoader','utils'], function($, Timer, EventLoader,
     event_loader.next();
   }
 
+  // Returns the time until the next event should show
+  // time = (next_event.age * this.delay) - (current_event.age * this.delay)
   Timeline.prototype.timeUntilNextEvent = function() {
     var event_loader = this.eventLoader,
         current_event = event_loader.current_event,
@@ -181,14 +183,21 @@ define(['jquery','timer','eventLoader','utils'], function($, Timer, EventLoader,
     return time;
   }
 
-
-  Timeline.prototype.init = function() {
+  Timeline.prototype.reset = function() {
+    this.state = Timeline.STATES.INITIAL;
+    $(this.event_text).text("");
     this.eventLoader = new EventLoader(this.data);
-    this.render();
-    this.attachEventHandlers();
+    this.changeControl('play');
+    this.timer.reset();
   }
 
 
+  Timeline.prototype.init = function() {
+    this.eventLoader = new EventLoader(this.data);
+    this.timer = new Timer(this.callback.bind(this), this.delay, this.timeUntilNextEvent())
+    this.render();
+    this.attachEventHandlers();
+  }
 
   return Timeline;
 });
