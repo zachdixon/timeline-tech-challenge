@@ -1,5 +1,30 @@
 # Articulate JS Tech Challenge
 
+## Instructions
+- [NodeJS](http://nodejs.org)
+
+Run the following commands from the project root directory:
+
+## Install Dependencies
+
+```bash
+$ npm install
+```
+
+## Start server @ **[http://localhost:8080](http://localhost:8080)**
+
+```bash
+$ node server.js
+```
+
+## To run tests
+
+```bash
+$ karma start
+```
+
+
+
 This tech challenge is your chance to demonstrate all of your JS
 knowledge and show off how you structure and test your code.
 
