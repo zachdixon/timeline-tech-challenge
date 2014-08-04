@@ -4,7 +4,7 @@ define(['jquery','timer','eventLoader','utils'], function($, Timer, EventLoader,
 
   var Timeline = function(opts) {
 
-    if(typeof opts !== "object") {
+    if(typeof opts !== "object" && opts !== undefined) {
       throw new Error("Illegal parameter passed to Timeline");
     }
 
@@ -154,16 +154,16 @@ define(['jquery','timer','eventLoader','utils'], function($, Timer, EventLoader,
     }
   }
 
+  // Show the current event's text
   Timeline.prototype.showEvent = function() {
     var event_loader = this.eventLoader,
-        $event = $(this.event_text)
-        next_event = event_loader.getNextEvent();
-    $event.text(this.eventLoader.getEventText());
+        $event = $(this.event_text);
+    $event.text(event_loader.getEventText());
     // if animation is enabled
     if(this.animate) {
       $event.addClass('zoomIn');
     }
-    event_loader.next();
+    event_loader.next(); // change the current event
   }
 
   // Returns the time until the next event should show
