@@ -1,0 +1,21 @@
+{
+  "author": "Zachary Dixon",
+  "name": "timeline-tech-challenge",
+  "description": "Articulate Timeline tech challenge",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zachdixon/timeline-tech-challenge.git"
+  },
+  "devDependencies": {
+    "connect": "^3.1.0",
+    "jquery": "^2.1.1",
+    "karma": "^0.12.19",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-requirejs": "^0.2.2",
+    "requirejs": "^2.1.14",
+    "serve-static": "^1.4.3"
+  }
+}
